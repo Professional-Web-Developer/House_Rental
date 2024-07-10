@@ -49,7 +49,7 @@ const showallbookings=async(req,res)=>{
         res.status(500).json({message:err.message})
     }
 }
-// for show all bookings of user to show for owner 
+// for show all booked details of specific places helped to show owner 
 
 const getbookedplaces=async(req,res)=>{
     try{

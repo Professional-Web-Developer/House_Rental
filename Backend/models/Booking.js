@@ -26,6 +26,10 @@ const bookingSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    numberofguests:{
+        type:Number,
+        required:true
+    },
     price:
     {
         type:Number,
