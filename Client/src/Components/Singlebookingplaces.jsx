@@ -50,7 +50,7 @@ catch(err)
             {/* for price */}
           </div>
           <div className='text-3xl'>
-            {booking.price}
+            ${booking.price}
           </div>
           
         </div>

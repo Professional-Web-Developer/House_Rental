@@ -61,7 +61,7 @@ app.use('/user',placebookingrouter)  //for user bookings details purpose
 app.use('/user',datecalculationrouter)  //for showing  dates which all are available
 app.use('/user',profilerouter) //for profilepage
 app.use('/user',deleteplacerouter) //for delete places by owner
-app.use('/user',deleteuserrouter)//to delete user
+app.use('/user',deleteuserrouter) //to delete user
 
 // app.listen is uesd to start the server or make the server to listen in specified port
 app.listen(port,()=>{
