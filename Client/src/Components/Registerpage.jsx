@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import axios from 'axios'
+
 // for user registration
+
 const Registerpage = () => {
   // here we can use "useState hook to track state in a function component "
   // one  is variable and another is function to change the value and store it in varialbe

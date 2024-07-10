@@ -5,9 +5,9 @@ import { differenceInCalendarDays, format } from 'date-fns';
 import { Link } from 'react-router-dom';
 import Bookingdates from './Bookingdates';
 
-// used to show all the booked places
+// used to show all the booked places of specified user
 
-
+// get all bookings of specified user
 function Bookingspage() {
   const [bookings, setBookings] = useState([]); // for storing booking data
 

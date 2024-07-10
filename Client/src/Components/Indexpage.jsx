@@ -5,6 +5,8 @@ import { format } from 'date-fns';
 import { SearchContext } from '../SearchContext'; // Import SearchContext
 import { UserContext } from '../UserContext'; // Import UserContext
 
+// home page of this platform
+
 const IndexPage = () => {
   const { searchTerm } = useContext(SearchContext); // Get searchTerm from context
   const { user } = useContext(UserContext); // Get user from context

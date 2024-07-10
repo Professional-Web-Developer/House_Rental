@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+// to show the places in detiled manner or detailed view
+
 const Placegallery = ({places}) => {
     const [showallphotos,setShowallphotos]=useState(false)
         // function for show all the photos in the singlebooking page in detailed view

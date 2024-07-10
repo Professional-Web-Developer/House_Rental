@@ -24,6 +24,7 @@ const Placesformpage = () => {      //to store the data of places
 
 
     // for delete place by owner
+    
     function deletefunction()
     {
         axios.delete(`/place/delete/${id}`).then(res=>{
@@ -112,12 +113,12 @@ const Placesformpage = () => {      //to store the data of places
         <div>
             <form onSubmit={saveplace}>
                     {preinput('Title','Title for your place. should be short and catchy as in advertisement')}
-                    <input type="text" placeholder="Title,for example:Web is my favorite" value={title} onChange={(e)=>{
+                    <input type="text" placeholder="Title,for example:Web is my favorite" required value={title} onChange={(e)=>{
                         setTitle(e.target.value)
                     }}/>
                     {/* for title */}
                     {preinput('Address','Address to this place')}
-                    <input type="text" placeholder='Address' value={address} onChange={(e)=>{
+                    <input type="text" placeholder='Address' value={address} required onChange={(e)=>{
                         setAddress(e.target.value)
                     }
                     }/>
@@ -127,7 +128,7 @@ const Placesformpage = () => {      //to store the data of places
                     {/* for photo link upload and photo upload by using the photosuploader component*/}
                    
                     {preinput('Description','Description of your place')}
-                    <textarea value={description} onChange={(e)=>{
+                    <textarea value={description} required onChange={(e)=>{
                         setDescription(e.target.value)
                     }} placeholder='Description'/>
                     {preinput('Perks','Select perks of your place')}
@@ -138,7 +139,7 @@ const Placesformpage = () => {      //to store the data of places
                     </div>
                     
                     {preinput('Extra-Info','house rules,etc')}
-                    <textarea value={extrainfo} onChange={e=>{
+                    <textarea required value={extrainfo} onChange={e=>{
                         setExtrainfo(e.target.value)
                     }}/>
                     {preinput('Check In&Out times','add check in and out times,remember to have some window for cleaning the room between guests')}
@@ -147,24 +148,24 @@ const Placesformpage = () => {      //to store the data of places
                             <div className='py-4 px-4'>
                                 <label >Check in:</label>
                                 {/* check out date */}
-                                <input type="date" value={checkin} onChange={e=>setCheckin(e.target.value)}/>
+                                <input  type="date" value={checkin} onChange={e=>setCheckin(e.target.value)}/>
                             </div>
                             <div className=' py-4 px-4 border-l'>
                                 <label >Check out:</label>
                                 {/* check in date */}
-                                <input type="date" value={checkout} onChange={e=>setCheckout(e.target.value)}/>
+                                <input  type="date" value={checkout} onChange={e=>setCheckout(e.target.value)}/>
                             </div>
                         </div>
                         <div>
                             <h3 className='mt-2 -mb-1'>Max number of guests</h3>
-                            <input type="number" placeholder='1'value={maxguests} onChange={e=>{
+                            <input type="number" required placeholder='1'value={maxguests} onChange={e=>{
                                 setMaxguests(e.target.value)
                             }}/>
                             {/* for max number of guests */}
                         </div>
                         <div>
                             <h3 className='mt-2 -mb-1'>Price</h3>
-                            <input type="number" placeholder='100'value={price} onChange={e=>{
+                            <input required type="number"  placeholder='100'value={price} onChange={e=>{
                                 setPrice(e.target.value)
                             }}/>
                             {/* for price */}

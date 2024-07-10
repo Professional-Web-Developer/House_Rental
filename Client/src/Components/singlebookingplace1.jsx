@@ -6,9 +6,15 @@ import Placegallery from './Placegallery'
 import Addresslink from './Addresslink'
 import { differenceInCalendarDays, format } from 'date-fns'
 
+// for show the details of place and also contains the form for booking
+
 const Singlebookingplace1 = () => {
     const { id } = useParams()
     const [places, setPlaces] = useState({})
+    // check perks are available or not
+    const perks = places && Array.isArray(places.perks) ? places.perks : [];
+
+    // used to get the details for place
 
     useEffect(() => {
         if (!id) {
@@ -21,6 +27,8 @@ const Singlebookingplace1 = () => {
         )
     }, [id])
 
+    // for check the given date is valid or not
+
     const checkInDate = new Date(places.checkIn)
     const isValidCheckInDate = !isNaN(checkInDate.getTime())
 
@@ -28,6 +36,7 @@ const Singlebookingplace1 = () => {
     const isValidCheckOutDate = !isNaN(checkOutDate.getTime())
 
     return (
+        // details about place
         <>
             <div className='mt-4 bg-gray-100 -mx-8 px-8 pt-8 '>
                 <h1 className='text-3xl'>{places.title}</h1>
@@ -41,14 +50,28 @@ const Singlebookingplace1 = () => {
                         </div>
                         Check-in: {isValidCheckInDate ? format(checkInDate, 'yyyy-MM-dd') : 'Invalid Date'} <br />
                         Check-out: {isValidCheckOutDate ? format(checkOutDate, 'yyyy-MM-dd') : 'Invalid Date'} <br />
-                        Max Number of guests: {places.maxGuests}
+                        Max Number of guests: {places.maxGuests}<br/>
+                        Extra Features:
+                        <div className='ml-5'>
+                            {perks.length > 0 ? (
+                            perks.map((perk, index) => (
+                            <div key={index} >{perk}</div>
+                            ))
+                            ) : (
+                            <div>No perks available</div>
+                            )}
+                        </div>
+                        
                     </div>
+
                     <div>
+                        {/* for booking form */}
                         <Bookingwidget1 places={places} />
                     </div>
                 </div>
                 <div className="bg-white -mx-8 px-8 py-8 border-t">
                     <div>
+                        {/* to show extra info */}
                         <h2 className='font-semibold text-2xl'>Extra info</h2>
                     </div>
                     <div className='mb-4 mt-2 text-sm text-gray-700 leading-4'>{places.extraInfo}</div>

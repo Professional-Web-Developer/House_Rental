@@ -3,6 +3,9 @@ import { UserContext } from '../UserContext.jsx';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 
+
+// user profile details profile page
+
 const Account = () => {
     const [redirect, setRedirect] = useState(null);
     const [user1, setUser1] = useState(null);

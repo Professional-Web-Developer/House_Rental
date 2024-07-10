@@ -1,5 +1,7 @@
 import React from 'react'
+
 // for easy understanging we take perks checksbox inputs as new component
+
 const Perks = ({selected,onChange}) => {
   function handlecheckbox(e){
     const {checked,name}=e.target;

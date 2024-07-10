@@ -6,6 +6,9 @@ import { UserContext } from '../UserContext'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
+// for booking form
+
+
 const Bookingwidget1 = ({ places }) => {
     const [checkin, setCheckin] = useState(null)
     const [checkout, setCheckout] = useState(null)
@@ -19,11 +22,17 @@ const Bookingwidget1 = ({ places }) => {
     const { user } = useContext(UserContext)
     let numberofdays = 0
 
+// for check user available or not
+
+
     useEffect(() => {
         if (user) {
             setName(user.name)
         }
     }, [user])
+
+// for get details of bookings of the specified place
+
 
     useEffect(() => {
         if (places._id) {
@@ -35,6 +44,8 @@ const Bookingwidget1 = ({ places }) => {
                 setBookedDates(dates)
             })
 
+// for getting details of places
+
             axios.get(`/account/places/${places._id}`).then(res => {
                 const { checkIn, checkOut } = res.data
                 setStartDate(new Date(checkIn))
@@ -44,6 +55,11 @@ const Bookingwidget1 = ({ places }) => {
             })
         }
     }, [places._id])
+
+
+    // for booking function and set the redirect path
+
+
 
     async function bookthisplace() {
         const data = {
@@ -56,6 +72,9 @@ const Bookingwidget1 = ({ places }) => {
         setRedirect(`/user/account/bookings/${bookingid}`)
     }
 
+// after booking redirect
+
+
     if (redirect) {
         return <Navigate to={redirect} />
     }
@@ -64,21 +83,27 @@ const Bookingwidget1 = ({ places }) => {
         numberofdays = differenceInCalendarDays(new Date(checkout), new Date(checkin))
     }
 
+// to get the booked dates to hide in calendar for booking
+
     const isBooked = date => {
         return bookedDates.some(d => differenceInCalendarDays(d, date) === 0)
     }
+
+    // to show the calendar dates within range filter process
 
     const isWithinAvailableDates = date => {
         return date >= startDate && date <= endDate
     }
 
     return (
+        // to show the details of place
         <div className='bg-white shadow p-4 rounded-2xl'>
             <div className='text-2xl text-center'>
                 Price: ${places.price} / per night
             </div>
             <div className='border rounded-2xl mt-4'>
                 <div className='flex'>
+                    {/* for check in date picker */}
                     <div className='py-4 px-4'>
                         <label>Check in:</label>
                         <DatePicker
@@ -94,6 +119,7 @@ const Bookingwidget1 = ({ places }) => {
                             dateFormat='yyyy-MM-dd'
                         />
                     </div>
+                    {/* for check out date picker calendar*/}
                     <div className='py-4 px-4 border-l'>
                         <label>Check out:</label>
                         <DatePicker
@@ -110,10 +136,12 @@ const Bookingwidget1 = ({ places }) => {
                         />
                     </div>
                 </div>
+                {/* number of guests */}
                 <div className='px-3 py-3 border-t'>
                     <label>Number of Guests:</label>
                     <input type='number' value={numberofguests} onChange={e => setNumberofguests(e.target.value)} />
                 </div>
+                {/* to check the user give the correct date */}
                 {numberofdays > 0 && (
                     <>
                         <div className='px-3 py-3 border-t'>
@@ -127,8 +155,9 @@ const Bookingwidget1 = ({ places }) => {
                     </>
                 )}
             </div>
+            {/* button for booking with some constraints */}
             <button onClick={bookthisplace} className='primary mt-4'>Book this place
-                {numberofdays > 0 && (<span> &nbsp;{numberofdays * places.price}</span>)}
+                {numberofdays > 0 && (<span> &nbsp; ${numberofdays * places.price}</span>)}
             </button>
         </div>
     )

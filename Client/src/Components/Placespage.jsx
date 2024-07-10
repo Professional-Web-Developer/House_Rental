@@ -6,6 +6,7 @@ import {differenceInCalendarDays, format} from 'date-fns'
 
 import Bookingdates from './Bookingdates.jsx';
 import Bookedplaces from './Bookedplaces.jsx';
+
 // for accomodations page to show all the places posted by owner
 
 const Placespage = () => {

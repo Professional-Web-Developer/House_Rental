@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
+// user context to give the user details under the child used to check the user is the state of logged in or not
+
 export const UserContext=createContext({})
 
 export function UserContextProvider({children})

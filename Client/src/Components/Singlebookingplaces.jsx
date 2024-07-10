@@ -5,7 +5,9 @@ import Addresslink from './Addresslink';
 import Placegallery from './Placegallery';
 import Bookingdates from './Bookingdates';
 import Singlebookingplace1 from './singlebookingplace1';
+
 // used to show the detailed booked details of user
+
 const Singlebookingplaces = () => {
   const {id}=useParams();
   const [booking,setBooking]=useState(null);
