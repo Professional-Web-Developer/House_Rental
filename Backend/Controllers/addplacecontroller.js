@@ -4,11 +4,12 @@ import dotenv from 'dotenv'
 dotenv.config()
 // add places details in database from owner
 const addplacecontroller=(async(req,res)=>{
+   
+
+try{
     const{token}=req.cookies;
     // console.log(req.body)
     const {title,address,addedphotos,description,perks,checkin,checkout,extrainfo,maxguests,price}=req.body;
-
-try{
     jwt.verify(token,process.env.JWT_SECRET,{},async(err,userData)=>{   //decode the token to get the data
         if(err) throw err;
         // add details in database

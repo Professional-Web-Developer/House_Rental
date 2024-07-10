@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import Placesformpage from './Placesformpage.jsx';
-import AccountNav from './AccountNav.jsx';
 import axios from 'axios';
 import {differenceInCalendarDays, format} from 'date-fns'
 

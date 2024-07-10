@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../UserContext.jsx';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
@@ -7,25 +7,19 @@ const Account = () => {
     const [redirect, setRedirect] = useState(null);
     const [user1, setUser1] = useState(null);
     const { ready, user, setUser } = useContext(UserContext);
-// if ready is true means the page is ready to show
-// if not user means the user isn't login status
+    const [redirect1, setRedirect1] = useState(false);
 
-const [redirect1,setRedirect1]=useState(false)
+    // for delete place by owner
+    const deleteFunction = async () => {
+        try {
+            await axios.delete(`/user/delete/${user._id}`);
+            setUser(null)
+            setRedirect1(true);
 
-// for delete place by owner
-function deletefunction()
-{
-    axios.delete(`/user/delete/${user._id}`).then(res=>{
-        console.log(res)
-        setRedirect1(true)
-    })
-}
-if(redirect1)
-    {
-        return <Navigate to={'/user/login'} />
-    }
-
-
+        } catch (error) {
+            console.error('Failed to delete user:', error);
+        }
+    };
 
     useEffect(() => {
         if (user) {
@@ -35,35 +29,40 @@ if(redirect1)
                     const response = await axios.get(`/profile/${user._id}`);
                     setUser1(response.data);
                 } catch (error) {
-                    console.error("Failed to fetch user profile:", error);
+                    console.error('Failed to fetch user profile:', error);
                 }
             };
             fetchUserProfile();
         }
     }, [user]);
-    // functionality for logout
 
+    // functionality for logout
     const logout = async () => {
-        await axios.post('/logout');
-        setUser(null);
-        setRedirect('/');
+        try {
+            await axios.post('/logout');
+            setUser(null);
+            setRedirect('/');
+        } catch (error) {
+            console.error('Failed to log out:', error);
+        }
     };
-// if we get user details but page not loading it shows loading
+
+    // if we get user details but page not loading it shows loading
     if (!ready) {
         return <h1>Loading...</h1>;
     }
-// if not user it redirect to login
+
+    // if not user it redirects to login
     if (ready && !user && !redirect) {
         return <Navigate to='/user/login' />;
     }
 
-    if (ready && !user) {
-        return <Navigate to='/user/login' />;
-    }
-    // if we have redirect user can redirected to the redirected page
-
     if (redirect) {
         return <Navigate to={redirect} />;
+    }
+
+    if (redirect1) {
+        return <Navigate to='/user/login' />;
     }
 
     return (
@@ -87,9 +86,10 @@ if(redirect1)
                         Logout
                     </button>
                     {/* button to call the logout functionality */}
-                    <button className='bg-red-500  mt-4 max-w-sm px-5 py-2 text-xl rounded-xl text-white' onClick={(e)=>{
-                        deletefunction();
-                    }}>
+                    <button
+                        className='bg-red-500 mt-4 max-w-sm px-5 py-2 text-xl rounded-xl text-white'
+                        onClick={deleteFunction}
+                    >
                         Delete User
                     </button>
                 </>
