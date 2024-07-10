@@ -61,7 +61,7 @@ const profilecontroller=(req,res)=>{
 
 
 
-//forget paassword
+//send link using nodemailer to reset password
 const forgetpasswordToken=asyncHandler(async(req,res)=>{
     const {email}=req.body
     const user1=await user.findOne({email});
@@ -86,6 +86,8 @@ const forgetpasswordToken=asyncHandler(async(req,res)=>{
     
     })
 
+
+    // used for update the password
 
     const updatepasswordcontroller = async (req, res) => {
         const { password } = req.body;

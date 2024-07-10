@@ -29,13 +29,13 @@ const Registerpage = () => {
     setTimeout(() => {
       setAlertMessage(null);
       setRedirect(true);
-    }, 500); // 10 seconds
+    }, 500); // 5 seconds
   } catch (err) {
     setAlertMessage("Email or Mobile Number already exists");
 
     setTimeout(() => {
       setAlertMessage(null);
-    }, 1000); // 10 seconds
+    }, 500); // 5 seconds
   }
 };
 
@@ -58,12 +58,15 @@ const Registerpage = () => {
           <input type="email" autoComplete='off' required placeholder='your@email.com' value={email} onChange={e=>{
             setEmail(e.target.value)
           }}  />
+          {/* email */}
           <input type="number" autoComplete='off' required placeholder='Mobile' value={mobile}  onChange={e=>{
             setMobile(e.target.value)
           }}  />
+          {/* mobile */}
           <input type="password" autoComplete='off' required placeholder='Password' value={password}  onChange={e=>{
             setPassword(e.target.value)
           }}  />
+          {/* password */}
           <button className='bg-primary p-2 w-full text-white rounded-2xl'>Register</button>
 
           <div className='text-center py-2 text-gray-500 '>
@@ -73,6 +76,7 @@ const Registerpage = () => {
           </div>
         </form>
         {alertMessage && (
+          // alert message for show the status to user
           <div className='mt-4 text-center text-red-500'>
             {alertMessage}
           </div>

@@ -4,6 +4,9 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import Perks from './Perks.jsx'
 import Photosuploader from './Photosuploader.jsx';
 import axios from 'axios';
+import Bookedplaces from "./Bookedplaces.jsx";
+
+// for used to add the new place or update the posted places by owner
 
 const Placesformpage = () => {      //to store the data of places
     const {id}=useParams();
@@ -18,6 +21,16 @@ const Placesformpage = () => {      //to store the data of places
     const [maxguests,setMaxguests]=useState(1);
     const [price,setPrice]=useState(100)
     const [redirect,setRedirect]=useState(false)
+
+
+    // for delete place by owner
+    function deletefunction()
+    {
+        axios.delete(`/place/delete/${id}`).then(res=>{
+            console.log(res)
+            setRedirect(true)
+        })
+    }
 
     useEffect(()=>{
         if(!id){            //check if id or not to find new data or update
@@ -102,14 +115,16 @@ const Placesformpage = () => {      //to store the data of places
                     <input type="text" placeholder="Title,for example:Web is my favorite" value={title} onChange={(e)=>{
                         setTitle(e.target.value)
                     }}/>
+                    {/* for title */}
                     {preinput('Address','Address to this place')}
                     <input type="text" placeholder='Address' value={address} onChange={(e)=>{
                         setAddress(e.target.value)
                     }
                     }/>
+                    {/* for address */}
                     
                     <Photosuploader addedphotos={addedphotos} onChange={setAddedphotos}/>  
-                    {/* for photo link upload and photo upload */}
+                    {/* for photo link upload and photo upload by using the photosuploader component*/}
                    
                     {preinput('Description','Description of your place')}
                     <textarea value={description} onChange={(e)=>{
@@ -157,8 +172,14 @@ const Placesformpage = () => {      //to store the data of places
                         
                     </div>
                     <button className='primary'>Save</button>
+                    {/* for add the place */}
+                    <button className=" text-center bg-red-500 my-5 text-white w-full p-2 rounded-2xl " onClick={(e)=>{
+                        deletefunction();}}>Delete</button>
+                    {/* for delete the place */}
                 </form>
             </div>
+            <Bookedplaces id={id} />
+            {/* to show ala the booked places to owner which all are booked by user */}
         
     </>
   )

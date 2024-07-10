@@ -12,7 +12,7 @@ function getuserdatafromtoken(req){
     }) 
 }
 
-// for adding booking details in database
+// for adding booking details in database where user book the place
 
 const Placebookingcontroller=async(req,res)=>{
 const {
@@ -20,8 +20,6 @@ const {
 }=req.body;
 try{
     const userdetails=await getuserdatafromtoken(req);
-    const bookedDates=userdetails.checkin
-
     const newBooking=await Bookings.create({
         place,user:userdetails.id,checkin,checkout,numberofguests,name,mobile,price,
         });
@@ -38,7 +36,7 @@ catch(err)
 }
 
 
-// for show all bookings of user
+// for show all bookings of user which is booked by user
 
 const showallbookings=async(req,res)=>{
     try{
@@ -51,5 +49,19 @@ const showallbookings=async(req,res)=>{
         res.status(500).json({message:err.message})
     }
 }
+// for show all bookings of user to show for owner 
 
-export {Placebookingcontroller,showallbookings}
+const getbookedplaces=async(req,res)=>{
+    try{
+        const needplace=req.params.id;
+        const bookings=await Bookings.find({place:needplace}).populate('place') //to get full details of place it gets the  object
+        res.json(bookings)
+    }
+    catch(err)
+    {
+        res.status(500).json({message:err.message})
+    }
+}
+
+
+export {Placebookingcontroller,showallbookings,getbookedplaces}

@@ -6,20 +6,20 @@ import axios from 'axios';
 const Photosuploader = ({addedphotos,onChange}) => {
     
     const [photolink,setPhotolink]=useState('')
-
+// function for header element styling
 
     function inputHeader(text){
         return (
             <h2 className='text-2xl mt-4'>{text}</h2>
         )
-    }
-    // function for paragraph element
+    }  
+    // function for paragraph element styling
     function inputText(text){
         return(
             <p className='text-gray-500 text-sm'>{text}</p>
         )
         }
-        // function to combine header and description
+        // function to combine header and description styling
     function preinput(header,description)
     {
         return (
@@ -35,8 +35,9 @@ const Photosuploader = ({addedphotos,onChange}) => {
      async function getPhotoaslink(e)
      {
          e.preventDefault();
+        //  send the link to backend and get as photo
          const {data:filename}=await axios.post('/upload-by-link',{link:photolink})
-         // here we check we had photos previously in addedphotos and add photos
+         // here we had update photos in previously  addedphotos 
          onChange(prev=>{
              return [...prev,filename]
          })
@@ -88,16 +89,17 @@ const Photosuploader = ({addedphotos,onChange}) => {
                     <input type="text" value={photolink} onChange={(e)=>{
                     setPhotolink(e.target.value)
                     }}
+                    // for get photo as link input and button
                      placeholder={'add using link ....jpg'} />
                     <button onClick={getPhotoaslink} className='bg-gray-200 px-4 rounded-full'>Add&nbsp;Photo</button>
                     </div> 
                     <div className='mt-2 grid gap-2 grid-cols-3 md:grid-cols-4'>
-                    {/* here we can check and show the images  */}
+                    {/* here we can check and show the images which all are selected by user */}
                     {addedphotos.length>0 && addedphotos.map((link,index)=>(
                         <div key={link} className='relative h-32 flex '>
                             <img className=' rounded-2xl w-full object-cover ' src={'http://localhost:3069/user/uploads/'+link} alt="" />
                             
-                            {/* deletephoto */}
+                            {/* used for remove the photo */}
                             
                             <button onClick={(e)=>{
                                 removephoto(e,link)
@@ -108,7 +110,7 @@ const Photosuploader = ({addedphotos,onChange}) => {
 
                             </button>
                             
-                            {/* mainphoto change */}
+                            {/* used to select the thumbnail photo */}
                             <button onClick={(e)=>{
                                 
                                 selectmainphoto(e,link)
@@ -119,6 +121,7 @@ const Photosuploader = ({addedphotos,onChange}) => {
                                   </svg>
                                   
                                 )}
+                                {/* show darked star for mention the thumbnail photo */}
                                 {link===addedphotos[0] && (
                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
                                   <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
@@ -140,6 +143,7 @@ const Photosuploader = ({addedphotos,onChange}) => {
 
                         Upload</label>
                     </div>
+                    {/* for upload the photo */}
     </>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import { Outlet } from 'react-router-dom'
 import AccountNav from './AccountNav'
-// A layout which is used to appear header in every child
+// A layout which is used to appear header and navigation bar  in every child
 const Layout = () => {
   return (
     <div className='py-4 px-8 flex flex-col min-h-screen'>

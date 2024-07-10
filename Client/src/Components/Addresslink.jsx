@@ -1,5 +1,8 @@
 import React from 'react'
 
+
+// for show the address details and the user click this it redirect to the map
+
 const Addresslink = ({places,className=null}) => {
     if(!className){
         className = 'my-3 block'

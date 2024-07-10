@@ -17,6 +17,9 @@ import indexpagerouter from './Routes/indexpage.js';
 import placebookingrouter from './Routes/placebookings.js';
 import { EventEmitter } from 'events';
 import { datecalculationrouter } from './Routes/datecalculation.js';
+import profilerouter from './Routes/Profile.js';
+import deleteplacerouter from './Routes/deleteplace.js';
+import deleteuserrouter from './Routes/deleteuser.js';
 EventEmitter.defaultMaxListeners = 20;
 
 // express is REST API for node js to do post, get ,put ,delete and some other operations
@@ -56,6 +59,10 @@ app.use('/user',showuserplacerouter)  //for show the detailed view of specific p
 app.use('/user',indexpagerouter) //for home page
 app.use('/user',placebookingrouter)  //for user bookings details purpose 
 app.use('/user',datecalculationrouter)  //for showing  dates which all are available
+app.use('/user',profilerouter) //for profilepage
+app.use('/user',deleteplacerouter) //for delete places by owner
+app.use('/user',deleteuserrouter)//to delete user
+
 // app.listen is uesd to start the server or make the server to listen in specified port
 app.listen(port,()=>{
     console.log('server is running');

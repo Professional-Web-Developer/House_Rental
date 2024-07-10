@@ -9,6 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 export const __dirname = path.dirname(__filename);
 const uploaddest=path.join(__dirname,'uploads')
 
+// for downloading the image from link
+
 const uploadcontroller=async(req,res)=>{
     try{
         const {link} =req.body;

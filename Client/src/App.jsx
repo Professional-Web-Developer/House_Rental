@@ -1,4 +1,5 @@
 import './App.css'
+
 import { Route,Routes } from 'react-router-dom'
 import  Indexpage  from './Components/Indexpage'
 import Loginpage from './Components/Loginpage'
@@ -9,11 +10,12 @@ import { UserContextProvider } from './UserContext'
 import Account from './Components/Profile'
 import Placespage from './Components/Placespage'
 import Placesformpage from './Components/Placesformpage'
-import Singlepage from './Components/Singlepage'
 import Bookingspage from './Components/Bookingspage'
 import Singlebookingplaces from './Components/Singlebookingplaces'
 import Forgetpassword from './Components/Forgetpassword'
 import Forgetpasswordemail from './Components/Forgetpasswordemail'
+import { SearchProvider } from './SearchContext';
+import Singlebookingplace1 from './Components/singlebookingplace1';
 axios.defaults.baseURL='http://localhost:3069/user'
 axios.defaults.withCredentials=true
 
@@ -23,8 +25,9 @@ function App() {
   return (
     // UserContextProvider function is used for share data across the component tree.
     <UserContextProvider>
-    {/* Routes are used to redirect the page depend upon path which we given in url and also element is specified page */}
-          <Routes>
+      <SearchProvider>
+         {/* Routes are used to redirect the page depend upon path which we given in url and also element is specified page */}
+         <Routes>
             <Route path='/' element={<Layout/>}>
             {/* Layout is used to parent route element render the child element  */}
             <Route index element={<Indexpage/>}/>
@@ -40,16 +43,17 @@ function App() {
             {/* for add new places */}
             <Route path='/user/account/places/:id' element={<Placesformpage/>}/>
             {/* for update place */}
-            <Route path='/user/home/place/:id' element={<Singlepage />} />
-            {/* in index page they can visit specific place cards */}
+            <Route path='/user/home/place/:id' element={<Singlebookingplace1 />} />
+            {/* in index page they can visit specific place cards for booking */}
             <Route path='/user/account/bookings' element={
               <Bookingspage />
             } />
+            {/* for show all bookings which all are booked by user */}
             <Route path='/user/account/bookings/:id' element={
               <Singlebookingplaces />
+              // show booking details of specific place
             } />
             {/* here they can see the user specific booking details */}
-            
             </Route>
             <Route path='/user/forget-password/:token' element={
               <Forgetpassword />
@@ -59,6 +63,8 @@ function App() {
             }/>
            
           </Routes>
+
+      </SearchProvider>
     </UserContextProvider>
 
   )

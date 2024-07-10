@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const Placegallery = ({places}) => {
     const [showallphotos,setShowallphotos]=useState(false)
-        // function for show all the photos in the places in detailed view
+        // function for show all the photos in the singlebooking page in detailed view
 
     if(showallphotos){
         return(
@@ -18,7 +18,7 @@ const Placegallery = ({places}) => {
                             Close Photos
                         </button>
                     </div>
-                    {/* to get all photos amd show */}
+                    {/* to get all photos for that specific place and show */}
                 {places?.photos?.length>0 && places.photos.map((photo,index)=>(
                     <div key={index}>
                         
@@ -34,6 +34,7 @@ const Placegallery = ({places}) => {
     )}
     return (
     <>
+    {/*for show the photo largely if they click the photo */}
      <div className='relative'>
             <div className="grid gap-2 grid-cols-[2fr_1fr] rounded-3xl overflow-hidden">
                 {/* to show the main photo in places that means thumbnail photo */}

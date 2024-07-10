@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import place from '../models/Place.js'
 dotenv.config()
-// used to show the  added places by owner
+// used to show the places for owner which all are  added by owner
 const showplacescontroller=async(req,res)=>{
     try{
         const {token}=req.cookies;  //get token from req cookies

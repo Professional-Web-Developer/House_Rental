@@ -2,7 +2,7 @@ import place from '../models/Place.js'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 dotenv.config()
-// add places in database from owner
+// add places details in database from owner
 const addplacecontroller=(async(req,res)=>{
     const{token}=req.cookies;
     // console.log(req.body)
@@ -25,6 +25,9 @@ catch(err){
     res.json({message:err.message})
     }
 })
+
+
+
 
 // update the place details from owner
 const updateplacecontroller=async(req,res)=>{

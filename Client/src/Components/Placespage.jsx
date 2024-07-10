@@ -6,7 +6,8 @@ import axios from 'axios';
 import {differenceInCalendarDays, format} from 'date-fns'
 
 import Bookingdates from './Bookingdates.jsx';
-// for accomodations page
+import Bookedplaces from './Bookedplaces.jsx';
+// for accomodations page to show all the places posted by owner
 
 const Placespage = () => {
     const [places, setPlaces] = useState([]) //used to store the places details
@@ -80,6 +81,7 @@ const Placespage = () => {
                 </Link>
             ))}
         </div>
+        
 
 </div>
   );

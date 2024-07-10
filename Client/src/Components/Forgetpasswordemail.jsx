@@ -6,6 +6,9 @@ const Forgetpasswordemail = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
+//to send the mail to user for update the forget password
+
+// function for send the mail to user and backend connectivity
   async function update() {
     try {
       const response = await axios.post('/forget-password', { email });
@@ -28,10 +31,12 @@ const Forgetpasswordemail = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {/* input for email */}
       </div>
       <button className="bg-white p-2 mt-5" onClick={update}>
         Update Password
       </button>
+      {/* button to sent the mail */}
       {message && <p className="text-green-500 mt-5">{message}</p>}
       {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>

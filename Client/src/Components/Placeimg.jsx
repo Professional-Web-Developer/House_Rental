@@ -1,7 +1,6 @@
 import React from 'react';
 
-// for getting each image by index and return
-// for getting images from url and show  
+// for getting each image by index and return  
 
 const Placeimg = ({ place, index = 0, className = 'object-cover w-full h-full' }) => {
   if (!place?.photos?.length) {

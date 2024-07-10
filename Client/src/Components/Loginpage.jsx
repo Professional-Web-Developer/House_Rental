@@ -27,13 +27,13 @@ const Loginpage = () => {
       setTimeout(() => {
         setAlertMessage(null);
         setRedirect(true);
-      }, 500); // 10 seconds
+      }, 500); // 5 seconds
     } catch (err) {
       setAlertMessage("Email or Password is wrong");
 
       setTimeout(() => {
         setAlertMessage(null);
-      }, 1000); // 10 seconds
+      }, 1000); // 5 seconds
     }
   };
   // if redirect is true then it will redirect to home page
@@ -66,6 +66,7 @@ const Loginpage = () => {
         {/* This is a react component that renders a clickable link */}
           </div>
         </form>
+        {/* alert message is the login credentials are correct or not */}
         {alertMessage && (
           <div className='mt-4 text-center text-red-500'>
             {alertMessage}

@@ -5,13 +5,15 @@ const Perks = ({selected,onChange}) => {
     const {checked,name}=e.target;
     // get the only checkbox which all are checked
     if(checked){
-      onChange([...selected,name])           //if checked we can get the store the data in selected
+      onChange([...selected,name])           
+      //if checked we can get the data and store the data in selected
     }
     else{
       onChange([...selected.filter((item)=>item!==name)])  //here we check our selected array and name of the checkbox
     }
     
   }
+  // user interface and checkbox component
   return (
     <>
         
