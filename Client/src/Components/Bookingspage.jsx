@@ -40,7 +40,7 @@ function Bookingspage() {
                       </svg>
                       <span className="text-2xl">
                         {/* for total price */}
-                        Total Price: ${booking.price}
+                        Total Price: &#8377;{booking.price}
                       </span>
                     </div>
                   </div>
