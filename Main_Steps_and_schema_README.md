@@ -705,7 +705,7 @@ To upload photo from local machine:
 	
 		key                 type              value             
 	
-		photos				File			upload file
+		photos		    File	    upload file
 	
 	
 	make sure that your key value will be named as photos
