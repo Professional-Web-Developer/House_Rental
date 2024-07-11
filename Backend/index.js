@@ -52,10 +52,10 @@ await mongoose.connect(mongo_url)
 app.use('/user',registerrouter)   //for user registration
 app.use('/user',loginrouter)  //for user login
 app.use('/user',logoutrouter)   //for user logout
-app.use('/user',uploadrouter)   //for upload for places
+app.use('/user',uploadrouter)   //for upload photos for places
 app.use('/user',addplacerouter)   //for add places 
 app.use('/user',showplacesrouter)  //for show places for user 
-app.use('/user',showuserplacerouter)  //for show the detailed view of specific places which all are added by him
+app.use('/user',showuserplacerouter)  //for show the detailed view of specific places which all are added by user
 app.use('/user',indexpagerouter) //for home page
 app.use('/user',placebookingrouter)  //for user bookings details purpose 
 app.use('/user',datecalculationrouter)  //for showing  dates which all are available
