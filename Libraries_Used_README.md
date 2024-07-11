@@ -1,3 +1,21 @@
+Softwares:
+
+  Frontend:
+  
+    React js
+
+  Backend:
+
+      Node js
+      Express js
+  
+  Database:
+
+      MongoDB - Atlas
+
+
+
+
 Backend:
 
   bcrypt:
