@@ -1,5 +1,3 @@
-Softwares:
-
   Frontend:
   
     React js
