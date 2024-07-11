@@ -75,7 +75,7 @@ Step 7:
 
     
 	
-      				Schemas For Databases:
+Schemas For Databases:
 
 
 We can use mongodb Atlas server to store the Application datum.
@@ -233,7 +233,7 @@ Booking
 
 
 
-								Backend Routes with sample data
+Backend Routes with sample data
 		
 
 
@@ -313,17 +313,17 @@ For User Profile(Get the details of user except password by token in cookies):
 To Get Forget Password Email:
 
 
-post
+	post
 
 
-http://localhost:3069/user/forget-password
+	http://localhost:3069/user/forget-password
 
-sample data:
+	sample data:
 
 
-{
-    "email":"pasupathy.kavinmca@gmail.com"
-}
+	{
+    	"email":"pasupathy.kavinmca@gmail.com"
+	}
 
 
 
@@ -332,22 +332,22 @@ sample data:
 To change Password Route  by link got in email:
 
 
-post
+	post
 
 
-http://localhost:3069/user/new-password/:token
+	http://localhost:3069/user/new-password/:token
 
 
-Example link
+	Example link
 
-http://localhost:3069/user/new-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhc3VwYXRoeS5rYXZpbm1jYUBnbWFpbC5jb20iLCJ1c2VyaWQiOiI2NjhlYTllY2M5ZGY1MTBkZTM5OTUwNmEiLCJpYXQiOjE3MjA2MjY4NTgsImV4cCI6MTcyMDYyNzQ1OH0.jRtpthLcymisBP9qsMroVg1EWipbc893wO0RnX2BbWY
+	http://localhost:3069/user/new-			password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhc3VwYXRoeS5rYXZpbm1jYUBnbWFpbC5jb20iLCJ1c2VyaWQiOiI2NjhlYTllY2M5ZGY1MTBkZTM5OTUwNmEiLCJpYXQiOjE3MjA2MjY4NTgsImV4cCI6MTcyMDYyNzQ1OH0.jRtpthLcymisBP9qsMroVg1EWipbc893wO0RnX2BbWY
 
 
-sample data:
+	sample data:
 
-{
-    "password":"kavin369"
-}
+	{
+    	"password":"kavin369"
+	}
 
 
 
@@ -357,16 +357,16 @@ sample data:
 For index page:
 
 
-get
+	get
 
 
-http://localhost:3069/user/home
+	http://localhost:3069/user/home
 
 
-Here it will get the details of all places to show in indexpage
+	Here it will get the details of all places to show in indexpage
 
-sample data:
-	-
+	sample data:
+		-
 
 
 
@@ -378,17 +378,17 @@ sample data:
 For add places by owner:
  
  
- post 
+ 	post 
  
- http://localhost:3069/user/addplaces
+ 	http://localhost:3069/user/addplaces
  
- //here it can take the user details in cokkies make sure you are login
+ 	//here it can take the user details in cokkies make sure you are login
  
  
  
-sample data:
+	sample data:
 
-{
+	{
     "title": "Farm House",
     "address": "Kerala",
     "photos": ["photo1720429430780.jpg"],
@@ -399,7 +399,7 @@ sample data:
     "checkout": "2024-08-04T00:00:00.000+00:00",
     "maxguests": 3,
     "price": 140
-}
+	}
 
 
 
@@ -410,16 +410,16 @@ sample data:
 update place by owner:
 
 
-put
+	put
 
 
-http://localhost:3069/user/addplaces
+	http://localhost:3069/user/addplaces
 
 
-sample data:
+	sample data:
 
 
-{
+	{
     "id":"668eb8fee305a8b82aa288ba",
     "title": "Farm House",
     "address": "Kerala",
@@ -431,7 +431,7 @@ sample data:
     "checkout": "2024-08-04T00:00:00.000+00:00",
     "maxguests": 3,
     "price": 140
-}
+	}
 
 
 
@@ -441,20 +441,16 @@ sample data:
 
 For getting the booking details of specific place for calendar show for booking:
 
-get
+	get
 
-//here we need to give place id
+	//here we need to give place id
 
-http://localhost:3069/user/places/:id/bookings
-
-
+	http://localhost:3069/user/places/:id/bookings
 
 
+	sample link: 
 
-sample link: 
-
-
-http://localhost:3069/user/places/668bab9a53d2bee635b2ea8d/bookings
+		http://localhost:3069/user/places/668bab9a53d2bee635b2ea8d/bookings
 
 
 //get the details of booking as response
