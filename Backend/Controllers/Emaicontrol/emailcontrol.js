@@ -31,4 +31,4 @@ const sendEmail=asyncHandler(async(data,req,res)=>{
       
       main().catch(console.error);
 })
-export {sendEmail}
+export {sendEmail};

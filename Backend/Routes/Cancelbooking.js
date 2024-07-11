@@ -1,6 +1,12 @@
-import cancelbookingcontroller from "../Controllers/Cancelbookingcontroller.js";
-import express from 'express'
-const cancelbookingroutes=express.Router()
-cancelbookingroutes.delete('/cancel-bookings/:id',cancelbookingcontroller)
+import express from 'express';
+import { getCancellationFee, confirmCancellation } from '../Controllers/Cancelbookingcontroller.js';
 
-export default cancelbookingroutes
+const cancelbookingroutes = express.Router();
+
+// Route to get the cancellation fee
+cancelbookingroutes.get('/cancel-bookings/:id', getCancellationFee);
+
+// Route to confirm cancellation
+cancelbookingroutes.delete('/cancel-bookings/:id', confirmCancellation);
+
+export default cancelbookingroutes;
