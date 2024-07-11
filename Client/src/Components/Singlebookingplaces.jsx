@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import Addresslink from './Addresslink';
 import Placegallery from './Placegallery';
@@ -11,6 +11,7 @@ import Singlebookingplace1 from './singlebookingplace1';
 const Singlebookingplaces = () => {
   const {id}=useParams();
   const [booking,setBooking]=useState(null);
+  const navigate = useNavigate();
   useEffect(()=>{
     try{
     const fb=async()=>{
@@ -29,6 +30,15 @@ catch(err)
   console.log(err);
 }
   },[]);
+
+  const cancelBooking = async () => {
+    try {
+      await axios.delete(`/cancel-bookings/${id}`);
+      navigate('/user/account/bookings') // Redirect to the bookings list page
+    } catch (err) {
+      console.log(err);
+    }
+  };
   if(!booking)
   {
     return ' ';
@@ -44,6 +54,20 @@ catch(err)
           <Bookingdates booking={booking} />
           {/* booked dates */}
         </div>
+
+        <div className='flex flex-row gap-2'>
+          
+        <button onClick={cancelBooking} className='bg-red-500 p-6 text-white rounded-2xl'>
+          <div >
+            Cancel
+            {/* for price */}
+          </div>
+          <div className='text-3xl'>
+            &#8377;{booking.price}
+          </div>
+          
+        </button>
+        
         <div className='bg-primary p-6 text-white rounded-2xl'>
           <div >
             Total Price
@@ -54,8 +78,21 @@ catch(err)
           </div>
           
         </div>
+
+        </div>
+
+        {/* <div className='bg-primary p-6 text-white rounded-2xl'>
+          <div >
+            Total Price
+            {/* for price */}
+          {/*</div>
+          <div className='text-3xl'>
+            &#8377;{booking.price}
+          </div>
+          
+        </div>*/}
       </div>
-      <Placegallery places={booking.place}/>  
+      <Placegallery places={booking.place}/>   
       {/* to show the images of specified places */}
         
 
