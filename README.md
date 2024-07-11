@@ -2,14 +2,20 @@
 			Steps to run the Frontend and Backend from House_Rental Repository
 
 Step 1:
-	Ensure you have Git installed on your computer
-	Open a Terminal or Command Prompt
+	
+ 	Ensure you have Git installed on your computer
+	
+ 	Open a Terminal or Command Prompt
 		Windows: You can use Command Prompt, PowerShell, or Git Bash.
-		Mac/Linux: Use the Terminal.		
+		Mac/Linux: Use the Terminal.	
+  
 Step 2:
-	Navigate to the Directory Where You Want to Clone the Repository
+	
+ 	Navigate to the Directory Where You Want to Clone the Repository
+
 Step 3:
-	Clone the Repository
+	
+ 	Clone the Repository
 	git clone https://github.com/Professional-Web-Developer/House_Rental.git
 	
 								(or)
@@ -17,12 +23,16 @@ Step 3:
 		Navigate to the Repository on GitHub  https://github.com/Professional-Web-Developer/House_Rental
 		Download the ZIP File
 		Extract the ZIP File
+
 Step 4:
-	Navigate to the Cloned Repository
+	
+ 	Navigate to the Cloned Repository
 		cd House_Rental and type "code ." to open in vs code editor or
 
+
 Step 5:
-	Open the Repository in VS Code
+	
+ 	Open the Repository in VS Code
 		Open Visual Studio Code.
 		Open the cloned repository in VS Code:
 			Go to File > Open Folder
@@ -30,6 +40,7 @@ Step 5:
 				
 				
 Step 6:
+	
 	Run the Backend (Node.js)
 		step:6.1
 			Open a new terminal in VS Code:
@@ -47,7 +58,8 @@ Step 6:
 
 
 Step 7:
-	Run the Client (Vite.js)
+	
+ 	Run the Client (Vite.js)
 		step 7.1:
 			Open a new terminal tab in VS Code:
 				Go to Terminal > New Terminal
@@ -60,8 +72,11 @@ Step 7:
 		step 7.4:
 			Start the Vite.js development server
 				npm run dev
-				
-						Schemas For Databases:
+
+    
+	
+      				Schemas For Databases:
+
 
 We can use mongodb Atlas server to store the Application datum.
 
@@ -100,7 +115,8 @@ User Schema contains the details of user
 		
 Place Schema contains the details of place uploaded by owner
 
-{
+	
+ 	{
         owner:{
             type:mongoose.Schema.Types.ObjectId,ref:'User'
         },
@@ -150,10 +166,11 @@ Place Schema contains the details of place uploaded by owner
     }
 }
 
+
 Booking Schema contains the details of Booking
 
 
-{
+	{
     place:{
         type:mongoose.Schema.Types.ObjectId,ref:Place,
         required:true
@@ -194,6 +211,7 @@ User
 	Relationships:
 		One-to-Many with Place
 		One-to-Many with Booking
+
 Place
 
 	Fields:
@@ -201,6 +219,7 @@ Place
 	Relationships:
 		Many-to-One with User
 		One-to-Many with Booking
+
 Booking
 
 	Fields:
@@ -224,18 +243,18 @@ Booking
 
 For User Registration:
 
-post
+	post
 
-http://localhost:3069/user/register
+	http://localhost:3069/user/register
 
-sample data:
+	sample data:
 
 	{
     "name":"kavin",
     "email":"pasupathy.kavinmca@gmail.com",
     "mobile":866732888291,
     "password":"kavin369"
-}
+	}
 
 
 
@@ -248,18 +267,18 @@ sample data:
 
 For User Login:
 
-post
+	post
 
-http://localhost:3069/user/login
+	http://localhost:3069/user/login
 
-sample data:
+	sample data:
 
 
 
-{
+	{
     "email":"pasupathy.kavinmca@gmail.com",
     "password":"kavin369"
-}
+	}
 
 
 
@@ -272,17 +291,17 @@ For User Profile(Get the details of user except password by token in cookies):
 
 
 
-//Before do this process you need to login using above route path for add token in cookies
+	//Before do this process you need to login using above route path for add token in cookies
 
-get
+	get
 
-http://localhost:3069/user/profile
-
-
-example token:
+	http://localhost:3069/user/profile
 
 
-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhc3VwYXRoeS5rYXZpbm1jYUBnbWFpbC5jb20iLCJpZCI6IjY2OGVhOWVjYzlkZjUxMGRlMzk5NTA2YSIsIm5hbWUiOiJrYXZpbiIsImlhdCI6MTcyMDYyNjA5NX0.zaI_fL8XtCZqmh0a-PmObHxPv35CQ2YPTyAaxHppqdQ
+	example token:
+
+
+	token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhc3VwYXRoeS5rYXZpbm1jYUBnbWFpbC5jb20iLCJpZCI6IjY2OGVhOWVjYzlkZjUxMGRlMzk5NTA2YSIsIm5hbWUiOiJrYXZpbiIsImlhdCI6MTcyMDYyNjA5NX0.zaI_fL8XtCZqmh0a-PmObHxPv35CQ2YPTyAaxHppqdQ
 
 
 
