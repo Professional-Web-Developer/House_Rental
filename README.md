@@ -234,7 +234,13 @@ Booking
 
 
 Backend Routes with sample data
-		
+
+
+
+check port number for backend and client
+ 		
+	Backend : 3069
+ 	Client  : 5173
 
 
 
