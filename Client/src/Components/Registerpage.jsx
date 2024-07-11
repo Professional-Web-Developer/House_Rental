@@ -37,7 +37,7 @@ const Registerpage = () => {
 
     setTimeout(() => {
       setAlertMessage(null);
-    }, 500); // 5 seconds
+    }, 2000); // 5 seconds
   }
 };
 
