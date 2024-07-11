@@ -234,7 +234,13 @@ Booking
 
 
 Backend Routes with sample data
-		
+
+
+
+check port number for backend and client
+ 		
+	Backend : 3069
+ 	Client  : 5173
 
 
 
@@ -340,7 +346,8 @@ To change Password Route  by link got in email:
 
 	Example link
 
-	http://localhost:3069/user/new-			password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhc3VwYXRoeS5rYXZpbm1jYUBnbWFpbC5jb20iLCJ1c2VyaWQiOiI2NjhlYTllY2M5ZGY1MTBkZTM5OTUwNmEiLCJpYXQiOjE3MjA2MjY4NTgsImV4cCI6MTcyMDYyNzQ1OH0.jRtpthLcymisBP9qsMroVg1EWipbc893wO0RnX2BbWY
+	http://localhost:3069/user/new-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhc3VwYXRoeS5rYXZpbm1jYUBnbWFpbC5jb20iLCJ1c2VyaWQiOiI2NjhlYTll
+ 	Y2M5ZGY1MTBkZTM5OTUwNmEiLCJpYXQiOjE3MjA2MjY4NTgsImV4cCI6MTcyMDYyNzQ1OH0.jRtpthLcymisBP9qsMroVg1EWipbc893wO0RnX2BbWY
 
 
 	sample data:
