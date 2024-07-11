@@ -45,13 +45,14 @@ const Singlebookingplace1 = () => {
                 <div className='mt-8 mb-8 grid gap-8 grid-cols-1 md:grid-cols-[2fr_1fr] '>
                     <div>
                         <div className='my-4'>
-                            <h2 className='font-semibold text-2xl'>Description</h2>
+                            <h2 className='font-bold text-2xl'>Description</h2>
                             {places.description}
                         </div>
-                        Check-in: {isValidCheckInDate ? format(checkInDate, 'yyyy-MM-dd') : 'Invalid Date'} <br />
-                        Check-out: {isValidCheckOutDate ? format(checkOutDate, 'yyyy-MM-dd') : 'Invalid Date'} <br />
-                        Max Number of guests: {places.maxGuests}<br/>
-                        Extra Features:
+                        <span className='text-xl font-semibold'>Check-in&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span>
+                        {isValidCheckInDate ? format(checkInDate, 'yyyy-MM-dd') : 'Invalid Date'} <br />
+                        <span className='text-xl font-semibold'>Check-out&nbsp;:&nbsp;</span>{isValidCheckOutDate ? format(checkOutDate, 'yyyy-MM-dd') : 'Invalid Date'} <br />
+                        <span className='text-xl font-semibold'>Max Number of guests&nbsp;:&nbsp;</span>{places.maxGuests}<br/>
+                        <span className='text-xl font-semibold'>Extra Features&nbsp;:&nbsp;</span>
                         <div className='ml-5'>
                             {perks.length > 0 ? (
                             perks.map((perk, index) => (

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import Placesformpage from './Placesformpage.jsx';
 import axios from 'axios';
 import {differenceInCalendarDays, format} from 'date-fns'
+import { UserContext } from '../UserContext.jsx';
 
 import Bookingdates from './Bookingdates.jsx';
 import Bookedplaces from './Bookedplaces.jsx';
@@ -10,6 +11,9 @@ import Bookedplaces from './Bookedplaces.jsx';
 // for accomodations page to show all the places posted by owner
 
 const Placespage = () => {
+    const [redirect, setRedirect] = useState(null);
+    const [user1, setUser1] = useState(null);
+    const { ready, user, setUser } = useContext(UserContext);
     const [places, setPlaces] = useState([]) //used to store the places details
         useEffect(()=>{
             // get the details of multiple places  from backend
@@ -45,7 +49,7 @@ const Placespage = () => {
                    <div className='grow-0 shrink '>
                         <h2 className='text-xl'>{place.title}</h2>
                          {/* heading */}
-                        <p className='text-sm mt-3 mb-6 '>{place.description}</p>
+                        <p className='text-sm mt-3 mb-6 overflow-hidden text-justify'>{place.description}</p>
                             {/* description */}
                             <div className={"flex gap-1 "}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
