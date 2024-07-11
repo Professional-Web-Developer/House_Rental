@@ -453,11 +453,11 @@ For getting the booking details of specific place for calendar show for booking:
 		http://localhost:3069/user/places/668bab9a53d2bee635b2ea8d/bookings
 
 
-//get the details of booking as response
+	//get the details of booking as response
 
 
-sample data:
-	-
+	sample data:
+		-
 
 
 
@@ -467,26 +467,22 @@ sample data:
 Delete place by owner:
 
 
-delete
+	delete
 
 
-http://localhost:3069/user/place/delete/:id
+	http://localhost:3069/user/place/delete/:id
 
 
-:id-place id
+	:id-place id
 
-sample link:
+	sample link:
 
-http://localhost:3069/user/place/delete/668eb8fee305a8b82aa288ba
+	http://localhost:3069/user/place/delete/668eb8fee305a8b82aa288ba
 
-sample data:
-
-
-	-
+	sample data:
+		
+  		-
 	
-
-
-
 
 
 
@@ -496,23 +492,18 @@ sample data:
 Logout process:
 
 
-post
+	post
 
 
-http://localhost:3069/user/logout
+	http://localhost:3069/user/logout
 
 
-//here it will delete the cookies to logout which saves user details
+	//here it will delete the cookies to logout which saves user details
 
 
-sample data:
+	sample data:
 
-	-
-
-
-
-
-
+		-
 
 
 
@@ -523,26 +514,26 @@ sample data:
 
 User Booking Details:
 
-post
+	post
 
 
-http://localhost:3069/user/home/bookings
+	http://localhost:3069/user/home/bookings
 
-//here user details are get from token
-
-
-sample data:
+	//here user details are get from token
 
 
-{
-"place":"668bab9a53d2bee635b2ea8d",
-"checkin":"2024-07-31T18:30:00.000+00:00",
-"checkout":"2024-08-03T18:30:00.000+00:00",
-"name":"new1",
-"mobile":"9898987807980432",
-"numberofguests":5,
-"price":420
-}
+	sample data:
+
+
+	{
+	"place":"668bab9a53d2bee635b2ea8d",
+	"checkin":"2024-07-31T18:30:00.000+00:00",
+	"checkout":"2024-08-03T18:30:00.000+00:00",
+	"name":"new1",
+	"mobile":"9898987807980432",
+	"numberofguests":5,
+	"price":420
+	}
 
 
 
@@ -555,19 +546,18 @@ sample data:
 
 Get all bookings from specific user to show all bookings of specific user:
 
-get
+	get
 
 
-http://localhost:3069/user/bookings
+	http://localhost:3069/user/bookings
 
 
-//here it get the user details from token for find in bookings details
+	//here it get the user details from token for find in bookings details
 
 
-sample data:
+	sample data:
 
-	-
-
+		-
 
 
 
@@ -580,58 +570,51 @@ sample data:
 Get the booked details of specific place to show the booked details for owner:
 
 
-get
+	get
 
-http://localhost:3069/user/already/bookings/:id
-
-
-sample link:
+	http://localhost:3069/user/already/bookings/:id
 
 
-http://localhost:3069/user/already/bookings/668bab9a53d2bee635b2ea8d
+	sample link:
 
 
-//here we send the place id as parameter
+	http://localhost:3069/user/already/bookings/668bab9a53d2bee635b2ea8d
 
-sample data :
 
-	-
+	//here we send the place id as parameter
+
+	sample data :
+
+		-
 	
 	
 
 
 
 
-
-
-	
+ 
 	
 Get the specific details  of user for profile page:
 
 
-get
+	get
+
+	http://localhost:3069/user/profile/:id
+
+	id - user id
 
 
-http://localhost:3069/user/profile/:id
-
-id-user id
+	sample link
 
 
-sample link
-
-
-http://localhost:3069/user/profile/668e0318e7161dbce25de811
+	http://localhost:3069/user/profile/668e0318e7161dbce25de811
 
 
 
-sample data:
+	sample data:
 
-	-
+		-
 	
-
-
-
-
 
 
 
@@ -641,19 +624,18 @@ sample data:
 To get places which all are added by owner:
 
 
-//make sure here you need to login before this process because it takes user details from token\
+	//make sure here you need to login before this process because it takes user details from token\
 
 
-get
+	get
 
 
-http://localhost:3069/user/showplaces
+	http://localhost:3069/user/showplaces
 
 
-Sample Data:
+	Sample Data:
 
-	-
-
+		-
 
 
 
@@ -664,21 +646,21 @@ Sample Data:
 To get the details of specific places:
 
 
-get
+	get
 
 
-http://localhost:3069/user/account/places/:id
+	http://localhost:3069/user/account/places/:id
 
 
-sample link
+	sample link
 
 
-http://localhost:3069/user/account/places/668d15c24dd0d350044c3d25
+	http://localhost:3069/user/account/places/668d15c24dd0d350044c3d25
 
 
-Sample data:
+	Sample data:
 	
-	-
+		-
 
 
 
@@ -689,16 +671,15 @@ Sample data:
 To upload photo as link:
 
 
-post
+	post
 
-http://localhost:3069/user/upload-by-link
+	http://localhost:3069/user/upload-by-link
 
-Sample data:
+	Sample data:
 
-{
-    "link":"https://pix8.agoda.net/hotelImages/89392/0/efa5c820dc2bfddcb9b5368d1ee23a74.jpeg?s=450x450"
-}
-
+	{
+    	"link":"https://pix8.agoda.net/hotelImages/89392/0/efa5c820dc2bfddcb9b5368d1ee23a74.jpeg?s=450x450"
+	}
 
 
 
@@ -707,22 +688,20 @@ Sample data:
 
 To upload photo from local machine:
 
-post
+	post
 
-http://localhost:3069/user/upload
+	http://localhost:3069/user/upload
 
-Sample data:
+	Sample data:
 
-	form-data
+		form-data
 	
-	key                 type              value             
+		key                 type              value             
 	
-	photos				File			upload file
+		photos				File			upload file
 	
 	
-	
-make sure that your key value will be named as photos
-
+	make sure that your key value will be named as photos
 
 
 
@@ -731,17 +710,17 @@ make sure that your key value will be named as photos
 
 Delete User:
 
-delete
+	delete
 
-http://localhost:3069/user/user/delete/:id
+	http://localhost:3069/user/user/delete/:id
 
-id-userid
+	id - userid
 
 
-sample link:
+	sample link:
 
-http://localhost:3069/user/user/delete/6684ec10298f45aeab473275
+	http://localhost:3069/user/user/delete/6684ec10298f45aeab473275
 
-Sample-Data:
+	Sample-Data:
 
-	-
+		-
