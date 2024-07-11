@@ -99,7 +99,7 @@ const Bookingwidget1 = ({ places }) => {
         // to show the details of place
         <div className='bg-white shadow p-4 rounded-2xl'>
             <div className='text-2xl text-center'>
-                Price: ${places.price} / per night
+                Price: &#8377;{places.price} / per night
             </div>
             <div className='border rounded-2xl mt-4'>
                 <div className='flex'>
@@ -157,7 +157,7 @@ const Bookingwidget1 = ({ places }) => {
             </div>
             {/* button for booking with some constraints */}
             <button onClick={bookthisplace} className='primary mt-4'>Book this place
-                {numberofdays > 0 && (<span> &nbsp; ${numberofdays * places.price}</span>)}
+                {numberofdays > 0 && (<span> &nbsp; &#8377;{numberofdays * places.price}</span>)}
             </button>
         </div>
     )

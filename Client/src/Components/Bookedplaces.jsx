@@ -40,7 +40,7 @@ const Bookedplaces = ({id}) => {
                       </svg>  
                       <span className="text-2xl">
                           {/* for total price they booked place as per the day calculation */}
-                          Total Price: ${booking.price}
+                          Total Price: &#8377;{booking.price}
                       </span>
                     </div>
                 </div>

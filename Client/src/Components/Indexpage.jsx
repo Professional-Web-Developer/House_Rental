@@ -61,7 +61,7 @@ const IndexPage = () => {
                 {/* title of place */}
                 <div className="mt-1">
                   {/* price of place */}
-                  <span className="font-bold ">${place.price} / night</span>
+                  <span className="font-bold ">&#8377;{place.price} / night</span>
                 </div>
                 <div className='flex items-center'>
                   {/* for showing the dates of booked */}

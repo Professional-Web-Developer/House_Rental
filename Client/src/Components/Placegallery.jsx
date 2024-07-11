@@ -43,7 +43,7 @@ const Placegallery = ({places}) => {
                 <div className='aspect-square object-cover cursor-pointer'>
                     {places.photos?.[0] && (
                     
-                        <img onClick={()=>setShowallphotos(true)} className='w-full ' src={'http://localhost:3069/user/uploads/'+places.photos?.[0]} alt=''/>
+                        <img onClick={()=>setShowallphotos(true)} className='h-full w-full' src={'http://localhost:3069/user/uploads/'+places.photos?.[0]} alt=''/>
                    
                     )}
 
