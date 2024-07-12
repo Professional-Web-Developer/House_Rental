@@ -29,6 +29,7 @@ Map of this Application:
      Booked Details ,Cancellation        Booked Details,Cancellation                                                      Specific Booked details
 
 
+Rgeistration page:
 
-![image](https://github.com/user-attachments/assets/412b90cf-1159-43e1-a02e-310a0c536a55)
+    ![image](https://github.com/user-attachments/assets/412b90cf-1159-43e1-a02e-310a0c536a55)
 
