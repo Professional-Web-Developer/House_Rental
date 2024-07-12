@@ -9,10 +9,10 @@ Ensure you have the necessary environment variables set in your hosting environm
      	Example configuration in `.env` file:
      
 	PORT=3069
-   	MONGO_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority
-       	JWT_SECRET=your_secret_key
-     	MAIL_ID=your_email@example.com
-    	MP=your_email_password  
+   	MONGO_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority  //for database
+       	JWT_SECRET=your_secret_key   //for jwt token
+     	MAIL_ID=your_email@example.com  //gmail id for mail transfer
+    	MP=your_email_password     //for mail it will take from  google accounts (password)
 
 
 
