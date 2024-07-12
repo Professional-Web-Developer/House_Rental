@@ -1,3 +1,24 @@
+Ensure you have the necessary environment variables set in your hosting environment. The required variables are:
+  
+   	PORT
+   	MONGO_URL
+   	JWT_SECRET
+   	MAIL_ID  
+    	MP
+     
+     	Example configuration in `.env` file:
+     
+	PORT=3069
+   	MONGO_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority
+       	JWT_SECRET=your_secret_key
+     	MAIL_ID=your_email@example.com
+    	MP=your_email_password  
+
+
+
+
+
+
 
 			Steps to run the Frontend and Backend from House_Rental Repository
 
