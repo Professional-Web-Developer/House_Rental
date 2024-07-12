@@ -17,10 +17,7 @@ Ensure you have the necessary environment variables set in your hosting environm
 
 
 
-
-
-
-			Steps to run the Frontend and Backend from House_Rental Repository
+Steps to run the Frontend and Backend from House_Rental Repository
 
 Step 1:
 	
