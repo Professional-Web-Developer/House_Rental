@@ -70,9 +70,9 @@ const Singlebookingplaces = () => {
         </div>
         <div className='flex flex-row gap-2'>
           <button onClick={handleCancelBooking} className='bg-red-500 p-6 text-white rounded-2xl'>
-            <div>Cancel</div>
+            <div>Cancel <br/>Booking</div>
             {/* for cancel button */}
-            <div className='text-3xl'>&#8377;{booking.price}</div>
+            {/* <div className='text-3xl'>&#8377;{booking.price}</div> */}
           </button>
           <div className='bg-primary p-6 text-white rounded-2xl'>
             <div>Total Price</div>
