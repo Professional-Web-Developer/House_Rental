@@ -731,3 +731,52 @@ Delete User:
 	Sample-Data:
 
 		-
+
+
+
+  
+
+
+Booking cancellation fee:
+
+	
+ 	//make sure that you need to login before this process
+
+  
+   	get
+
+    	http://localhost:3069/user/cancel-bookings/:id
+
+	id - booking id
+
+	sample-link:
+
+    	http://localhost:3069/user/cancel-bookings/66908ae18c21cc70034a232f
+
+      	sample data:
+
+  		-
+
+
+
+
+
+Booking Cancellation:
+
+
+ 	//make sure that you need to login before this process
+
+
+	delete
+
+	http://localhost:3069/user/cancel-bookings/:id
+
+      	id - booking id
+   	
+	sample-link:
+
+    	http://localhost:3069/user/cancel-bookings/66908ae18c21cc70034a232f
+
+      	sample data:
+
+  		-
