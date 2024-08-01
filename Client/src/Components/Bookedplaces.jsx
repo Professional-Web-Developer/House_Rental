@@ -22,7 +22,7 @@ const Bookedplaces = ({id}) => {
         <h1 className='text-2xl text-center mt-10'>BookedPlaces</h1>
         <div className='flex flex-col gap-3 '>
           {bookings.length > 0 && bookings.map((booking) => (     //for getting each data in variable and show from booked detils
-            <Link to={`/user/account/bookings/${booking._id}`} className='flex gap-4 bg-gray-100 rounded-2xl overflow-hidden' key={booking._id}> {/** links to redirect the page to view the details of specific booing */}
+            <div className='flex gap-4 bg-gray-100 rounded-2xl overflow-hidden' key={booking._id}> {/** links to redirect the page to view the details of specific booing */}
               <div className='w-48'>
                 <Placeimg place={booking.place} />   
                 {/* for getting images from url and show  */}
@@ -46,7 +46,7 @@ const Bookedplaces = ({id}) => {
                 </div>
               </div>
   
-            </Link>
+            </div>
           ))}
         </div>
       </div>

@@ -40,7 +40,7 @@ app.use('/user/uploads',express
     .static(path.join(__dirname,'uploads')))
 
 // this is a middleware function.This middleware function parses incoming requests with JSON payloads and makes the data available in the req.body object.
-const port=process.env.PORT
+const port=process.env.PORT || 3069
 const mongo_url=process.env.MONGO_URL
 await mongoose.connect(mongo_url)
 .then(
@@ -67,6 +67,6 @@ app.use('/user',cancelbookingroutes) //for cancel booking by user
 
 // app.listen is uesd to start the server or make the server to listen in specified port
 app.listen(port,()=>{
-    console.log('server is running');
+    console.log(`server is running ${port}`);
 }
 )
