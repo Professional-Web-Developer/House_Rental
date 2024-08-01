@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../UserContext';
 import { SearchContext } from '../SearchContext';
-
+import logo from '../assets/logo.png'
 // contains searchbar and user profile link and logo
 // header of this place
 
@@ -25,8 +25,8 @@ const Header = () => {
     <div>
       <header className='flex justify-between '>
         <Link to={'/'} className='flex items-center gap-1 sm:mr-14'>
-          <img className='w-9 h-9' src="https://cartrabbit.io/wp-content/uploads/elementor/thumbs/cartrabbit_logo-pkzmj5imgyigk48dds0gvfykru9ke5f3ntqh4ssbjk.png" alt="cartrabbit" />
-          <span className='font-bold text-xl pt-3'>Cartrabbit</span>
+          <img className='w-9 h-9' src={logo} alt="Green House Rentals" />
+          <span className='font-bold text-xl pt-3'>GreenHR</span>
         </Link>
         {/* link to index pge by clicking the image */}
         <div className='flex gap-2 border border-gray-300 rounded-full  px-2 shadow-md shadow-gray-300'>

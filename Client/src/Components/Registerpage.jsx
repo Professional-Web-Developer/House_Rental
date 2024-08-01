@@ -16,6 +16,16 @@ const Registerpage = () => {
   // function to manage register when they click the register button
   const handlesubmit=async(e)=>{
     e.preventDefault()
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
+
+    if (!passwordRegex.test(password)) {
+      setAlertMessage("Password must be 8-12 characters long, include uppercase and lowercase letters, a number, and a special character.");
+      setTimeout(() => {
+        setAlertMessage(null);
+      }, 2000);
+      return;
+    }
     try
     {
       // axios is used to conncet the client and server or frontend and backend
@@ -65,7 +75,7 @@ const Registerpage = () => {
             setMobile(e.target.value)
           }}  />
           {/* mobile */}
-          <input type="password" autoComplete='off' required placeholder='Password' value={password}  onChange={e=>{
+          <input type="password" autoComplete='off' required placeholder='Password' value={password} maxLength={12} minLength={8}   onChange={e=>{
             setPassword(e.target.value)
           }}  />
           {/* password */}
