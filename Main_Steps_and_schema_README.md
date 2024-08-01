@@ -1,5 +1,23 @@
+Ensure you have the necessary environment variables set in your hosting environment. The required variables are:
+  
+   	PORT
+   	MONGO_URL
+   	JWT_SECRET
+   	MAIL_ID  
+    	MP
+     
+     	Example configuration in `.env` file:
+     
+	PORT=3069
+   	MONGO_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority  //for database
+       	JWT_SECRET=your_secret_key   //for jwt token
+     	MAIL_ID=your_email@example.com  //gmail id for mail transfer
+    	MP=your_email_password     //for mail it will take from  google accounts (password)
 
-			Steps to run the Frontend and Backend from House_Rental Repository
+
+
+
+Steps to run the Frontend and Backend from House_Rental Repository
 
 Step 1:
 	
@@ -731,3 +749,52 @@ Delete User:
 	Sample-Data:
 
 		-
+
+
+
+  
+
+
+Booking cancellation fee:
+
+	
+ 	//make sure that you need to login before this process
+
+  
+   	get
+
+    	http://localhost:3069/user/cancel-bookings/:id
+
+	id - booking id
+
+	sample-link:
+
+    	http://localhost:3069/user/cancel-bookings/66908ae18c21cc70034a232f
+
+      	sample data:
+
+  		-
+
+
+
+
+
+Booking Cancellation:
+
+
+ 	//make sure that you need to login before this process
+
+
+	delete
+
+	http://localhost:3069/user/cancel-bookings/:id
+
+      	id - booking id
+   	
+	sample-link:
+
+    	http://localhost:3069/user/cancel-bookings/66908ae18c21cc70034a232f
+
+      	sample data:
+
+  		-

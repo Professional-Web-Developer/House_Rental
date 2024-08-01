@@ -45,7 +45,10 @@
   4.My Bookings Page:
     
     Here user can see all bookings of that specific user
+    
     And click specific booking component to see all the full details of booking
+
+    Cancel booking option is available in this page
   
   
   5.My Accomodations Page:
