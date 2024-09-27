@@ -1,0 +1,23 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Registertest.js",
+  "scripts": {
+    "test": "mocha tests/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^127.0.2",
+    "selenium-webdriver": "^4.23.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "jest": "^29.7.0",
+    "mocha": "^10.7.0",
+    "user-event": "^4.0.0"
+  }
+}
